@@ -1,66 +1,120 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Test-colls-tutorial by isoboroff</title>
-
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <title>Test-colls-tutorial by isoboroff</title>
   </head>
+
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>Test-colls-tutorial</h1>
-        <p>This site is for materials relating to a tutorial for SIGIR 2013 on building test collections.</p>
+    <div id="container">
+      <div class="inner">
 
-        <p class="view"><a href="https://github.com/isoboroff/Test-Colls-Tutorial">View the Project on GitHub <small>isoboroff/Test-Colls-Tutorial</small></a></p>
+        <header>
+          <h1>Test-colls-tutorial</h1>
+          <h2>This site is for materials relating to a tutorial for SIGIR 2013 on building test collections.</h2>
+        </header>
 
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/isoboroff/Test-Colls-Tutorial/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/isoboroff/Test-Colls-Tutorial/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/isoboroff/Test-Colls-Tutorial" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
 
-        <ul>
-          <li><a href="https://github.com/isoboroff/Test-Colls-Tutorial/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/isoboroff/Test-Colls-Tutorial/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/isoboroff/Test-Colls-Tutorial">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h3>Welcome to GitHub Pages.</h3>
+        <hr>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+        <section id="main_content">
+          <h1>Building Test Collections</h1>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+<h2>An Interactive Tutorial for Students and Others Without Their Own Evaluation Conference Series</h2>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<h2>SIGIR 2013, Dublin, Ireland</h2>
 
-<h3>Designer Templates</h3>
+<p>Ian Soboroff
+National Institute of Standards and Technology</p>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<p>While existing test collections and evaluation conference efforts may sufficiently support one's research, one can easily find oneself wanting to solve problems no one else is solving yet.  But how can research in IR be done (or be published!) without solid data and experiments?  Not everyone can talk TREC, CLEF, INEX, or NTCIR into running a track to build a collection.  </p>
 
-<h3>Rather Drive Stick?</h3>
+<p>This tutorial aims to teach how to build a test collection using resources at hand, how to measure the quality of that collection, how to understand its limitations, and how to communicate them.
+The intended audience is advanced students who find themselves in need of a test collection, or actually in the process of building a test collection, to support their own research.   The goal of this tutorial is to lay out issues, procedures, pitfalls, and practical advice.</p>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<p>Attendees should come with a specific current need for data, and/or details on their in-progress collection building effort.  The first half of the course will cover history, techniques, and research questions in a lecture format.  The second half will be entirely devoted to open discussion during which we will collaboratively work through problems the attendees are currently working on.</p>
 
-<h3>Authors and Contributors</h3>
+<p>Upon completion of this tutorial, attendees will be familiar with the history of the test collection evaluation paradigm; understand the process of beginning from a concrete user task and abstracting that to a test collection design; understand different ways of establishing a document collection; understand the process of topic development; understand how to operationalize the notion of relevance, and be familiar with issues surrounding elicitation of relevance judgments; understand the pooling methodologies for sampling documents for labeling, and be familiar with sampling strategies for reducing effort; be familiar with procedures for measuring and validating a test collection; and be familiar with current research issues in this area.</p>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<p>This tutorial is highly relevant to information retrieval researchers, especially students nearing the experimental phase of their research.  While numerous test collections have already been built and are ready for them to use, it is increasingly common that we wish to explore an information retrieval task for which no test collection yet exists.  The choice is to adapt an existing collection, design a new one, or move beyond the laboratory experiment paradigm.</p>
 
-<h3>Support or Contact</h3>
+<p>Materials for the course will include lecture slides and a selection of papers drawn from the current literature for further reading.  These materials will be hosted here, and students with internet connectivity at the tutorial will be able to access them and follow along during the tutorial itself.</p>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/isoboroff">isoboroff</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+<p>Tutorial topics may include:</p>
+
+<ul>
+<li><p>Introduction to test collections: 
+basic concepts: task, documents, topics, relevance judgments, and measures;
+history of Cranfield paradigm.</p></li>
+<li><p>Task: a task-centered approach to conceiving test collections;
+metrics as an operationalization of task success;
+understanding the user task and the role of the system.</p></li>
+<li><p>Documents:
+the relationship between documents and task;
+naturalism vs constructivism;
+opportunity sampling and bias;
+distribution and sharing.</p></li>
+<li><p>Topics:
+designing topics from a task perspective.
+sources for topics.
+exploration or topic development.
+extracting topics from logs.
+topics and queries.
+topic set size.</p></li>
+<li><p>Relevance:
+defining relevance and utility starting from the task;
+obtaining labels, explicit and implicit elicitation (highlighting);
+Interface considerations;
+inter-annotator agreement;
+errors;
+crowdsourcing for relevance judgments;
+validation, process control, quality assurance;
+annotator skill set.</p></li>
+<li><p>Pooling:
+problem of scale and bias;
+breadth of pools, multiple systems;
+completeness vs. samples;</p></li>
+<li><p>Validation:
+user study;
+side-by-side comparison;
+a/b testing;
+interleaving.</p></li>
+<li><p>Pooling and sampling:
+pooling as a sampling method;
+pooling as optimization;
+move-to-front pooling;
+uniform sampling, stratified sampling, measure sampling;
+minimal test collections.</p></li>
+<li><p>Advanced task concepts:
+filtering, supporting system adaptation;
+sessions, time, user adaptation;
+context, feedback;
+exploration and fuzzy tasks;
+novelty, differential relevance;
+fundamental limits of Cranfield.</p></li>
+</ul>
+        </section>
+
+        <footer>
+          Test-colls-tutorial is maintained by <a href="https://github.com/isoboroff">isoboroff</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
   </body>
 </html>
